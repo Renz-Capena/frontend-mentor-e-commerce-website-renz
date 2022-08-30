@@ -120,7 +120,6 @@ addToCartBtn.addEventListener('click',function(){
                                             <img src='images/icon-delete.svg' alt='Delete' id='delete_btn'> 
                                         </div>
                                         <br>`;
-            
         }
     }
     
@@ -141,12 +140,8 @@ addToCartBtn.addEventListener('click',function(){
 
             btn.addEventListener('click',function(){
 
-                // alert('sa')
 
-                console.log(items)
-                items.splice(btnIndex,1)
-                console.log(items)
-                console.log(`this is length ${items.length}`)
+                items.splice(btnIndex,1);
 
                 items_array.innerHTML = "";
                 
@@ -164,26 +159,20 @@ addToCartBtn.addEventListener('click',function(){
                                                 </div>
                                                 <br>`;
     
-                    
                 }
 
 
                 if(items.length){
-                
-                                number_items_cart.textContent = items.length;
-                                
-                            }
-
-
+                    number_items_cart.textContent = items.length;
+                }
 
                 if(!items.length){
-                                        items_array.innerHTML +=   `<div class='no_items_wrapper'>
-                                                                            <p>Your cart is empty</p>
-                                                                        </div>`;
-                                
-                                        number_items_cart.style.display = 'none';
-                                        checkoutBtn.style.display = 'none'
-                                    }
+                    items_array.innerHTML +=   `<div class='no_items_wrapper'>
+                                                    <p>Your cart is empty</p>
+                                                </div>`;
+                    number_items_cart.style.display = 'none';
+                    checkoutBtn.style.display = 'none'
+                }
                 
                 autoRun();
             })
@@ -195,12 +184,39 @@ addToCartBtn.addEventListener('click',function(){
 
     if(!items.length){
         items_array.innerHTML +=   `<div class='no_items_wrapper'>
-                                            <p>Your cart is empty</p>
-                                        </div>`;
+                                        <p>Your cart is empty</p>
+                                    </div>`;
 
         checkoutBtn.style.display = 'none'
     }
 
+////===================================================Product slide js
+
+const images_product_pics_wrapper = document.querySelector('.images_product_pics_wrapper');
+const nextBtn = document.querySelector('.nextBtn');
+const prevBtn = document.querySelector('.previousBtn');
+
+let positionNumber = 1;
+
+nextBtn.addEventListener('click',function(){
+    positionNumber += 1;
+
+    if(positionNumber === 4){
+        positionNumber = 0;
+        images_product_pics_wrapper.style.transform = `translateX(-${positionNumber}00%)`
+    }else{
+        images_product_pics_wrapper.style.transform = `translateX(-${positionNumber}00%)`
+    }
+})
+
+prevBtn.addEventListener('click',function(){
+
+    if(positionNumber){
+        positionNumber -= 1;
+    
+        images_product_pics_wrapper.style.transform = `translateX(-${positionNumber}00%)`
+    }
+})
 
 
 
