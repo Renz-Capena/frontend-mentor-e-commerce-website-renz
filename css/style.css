@@ -17,6 +17,7 @@ nav{
     width: 240px;
     transform: translateX(-200%);
     transition: 0.4s;
+    position: fixed;
 }
 .btn_wrapper{
     display: grid;
@@ -41,6 +42,7 @@ nav{
     margin-top:20px;
     margin-left: 20px;
     margin-bottom: 25px;
+    cursor: pointer;
 }
 .overlay{
     position: absolute;
@@ -50,7 +52,8 @@ nav{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.315);
     display: none;
-    z-index: 4;
+    position: fixed;
+    /* z-index: 4; */
 }
 /* ============================nav_images_wrapper */
 .nav_images_wrapper{
@@ -68,6 +71,7 @@ nav{
     margin: 10px;
     margin-top: -0px;
     /* width: 20px; */
+    cursor: pointer;
 }
 .image-menu{
     /* margin: 10px; */
@@ -75,18 +79,26 @@ nav{
     padding: 10px;
     margin-left: 10px;
     width: 15px;
+    cursor: pointer;
 }
 
 .image-avatar{
     width: 25px;
+    border-radius: 50%;
     /* border: 1px solid red; */
     margin: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.image-avatar:hover{
+    border: 2px solid orange;
 }
 .image-cart{
     margin: 5px;
     padding: 5px;
     width: 18px;
     /* border: 1px solid; */
+    cursor: pointer;
 }
 .number_items_cart{
     position:absolute;
@@ -109,7 +121,7 @@ nav{
 }
 /* ==========================================image_wrapper */
 .image_wrapper{
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.326);
     width: 100vw;
     height: 100vw;
     overflow: hidden;
@@ -119,7 +131,11 @@ nav{
     /* border: 1px solid; */
     width: 100vw;
     height: 100vw;
-    z-index: 1;
+    transition: 0.5s;
+    /* margin-top: -34px; */
+    /* position: relative; */
+    /* z-index: 1; */
+    /* top: 0; */
 }
 .previousBtn,.nextBtn{
     background-color: whitesmoke;
@@ -127,20 +143,20 @@ nav{
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    z-index: 2;
+    /* position: relative; */
+    z-index: 1;
+    cursor: pointer;
 }
 .previousBtn{
     position: absolute;
-    margin-top: 45%;
+    margin-top: 45vw;
     margin-left: 10px;
-    position: fixed;
 }
 .nextBtn{
     position: absolute;
     right: 10px;
-    margin-top: 45%;
+    margin-top: 45vw;
     margin-right: 10px;
-    position: fixed;
 }
 /*=========================================cart_items_wrapper */
 .cart_items_wrapper{
@@ -225,6 +241,10 @@ nav{
     color: white;
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: 0.5s;
+}
+#checkoutBtn:hover{
+    background-color: #ffa763;
 }
 /* =====================================description_wrapper */
 .description_wrapper{
@@ -311,6 +331,7 @@ nav{
     color: hsl(26, 100%, 55%);
     font-size: 20px;
     font-weight: bolder;
+    cursor: pointer;
 }
 /* ===================================add_to_cart_btn_wrapper */
 .add_to_cart_btn_wrapper{
@@ -323,6 +344,11 @@ nav{
     padding: 15px 0px;
     border-radius: 10px;
     font-size: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.add_to_cart_btn_wrapper:hover{
+    background-color: hsl(26, 100%, 70%);
 }
 .add_to_cart_btn_wrapper svg{
     margin: 0px 15px;
